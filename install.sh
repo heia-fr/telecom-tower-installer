@@ -15,3 +15,18 @@ if [ $USER != 'pi' ]; then
     echo "ERROR: This script is supposed to be run as the pi user"
     exit 1
 fi
+
+if [ ! /usr/bin/git ]; then
+	echo "Installing git"
+	sudo apt-get update
+	sudo apt-get install git
+if 
+
+mkdir -p $HOME/git/github.com/ansible
+cd $HOME/git/github.com/ansible
+
+git clone https://github.com/ansible/ansible.git --recursive
+cd ./ansible
+source ./hacking/env-setup
+
+echo "READY..."
