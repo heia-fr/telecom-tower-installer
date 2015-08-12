@@ -28,7 +28,7 @@ cd $HOME/git/github.com/ansible
 if [ -d ansible ]; then
 	cd $ansible
 	git pull
-else
+else;
 	git clone https://github.com/ansible/ansible.git --recursive
 	cd ./ansible
 fi
