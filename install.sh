@@ -26,11 +26,11 @@ mkdir -p $HOME/git/github.com/ansible
 cd $HOME/git/github.com/ansible
 
 if [ -d ansible ]; then
-	cd $ansible
+	cd ansible
 	git pull
-else;
+else
 	git clone https://github.com/ansible/ansible.git --recursive
-	cd ./ansible
+	cd ansible
 fi
 source ./hacking/env-setup
 
