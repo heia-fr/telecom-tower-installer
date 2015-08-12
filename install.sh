@@ -20,13 +20,18 @@ if [ ! /usr/bin/git ]; then
 	echo "Installing git"
 	sudo apt-get update
 	sudo apt-get install git
-if 
+fi
 
 mkdir -p $HOME/git/github.com/ansible
 cd $HOME/git/github.com/ansible
 
-git clone https://github.com/ansible/ansible.git --recursive
-cd ./ansible
+if [ -d ansible ]; then
+	cd $ansible
+	git pull
+else
+	git clone https://github.com/ansible/ansible.git --recursive
+	cd ./ansible
+fi
 source ./hacking/env-setup
 
 echo "READY..."
