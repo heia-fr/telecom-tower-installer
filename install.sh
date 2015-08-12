@@ -11,4 +11,7 @@ echo '*       Haute école d'\''ingéneirie et d'\''architecture de Fribourg    
 echo "*                                                                    *"
 echo "**********************************************************************"
 
-echo $USER
+if [ $USER ne 'pi' ]; then
+    echo "this script is supposed to be run as the pi user"
+    exit 1
+fi
